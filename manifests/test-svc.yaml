@@ -1,0 +1,22 @@
+# manifests/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: default
+spec:
+  # Le type NodePort rend le service accessible depuis votre Mac
+  # via un port sur le "nœud" du cluster Kind.
+  type: NodePort
+  selector:
+    # Cette ligne est cruciale : elle lie ce service aux pods
+    # qui ont le label "app: nginx".
+    app: nginx
+  ports:
+    - protocol: TCP
+      # Port exposé par le service à l'intérieur du cluster.
+      port: 8088
+      # Port sur lequel le conteneur Nginx écoute.
+      targetPort: 8088
+      # Kubernetes choisira automatiquement un port entre 30000 et 32767
+      # pour l'exposer sur le noeud.
