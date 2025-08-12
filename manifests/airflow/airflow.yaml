@@ -177,7 +177,7 @@ metadata:
     heritage: Helm
 type: Opaque
 data:
-  api-secret-key: "Z3NBUTFXM1VnMFJOV2JiM0NPZnhhS090YUI1aUxQOUk="
+  api-secret-key: "dWtCVjFCdGxhS0JRam9TbDFwSEFEaElZeW84V1picFI="
 ---
 # Source: airflow/templates/secrets/jwt-secret.yaml
 ############################################
@@ -196,7 +196,7 @@ metadata:
     heritage: Helm
 type: Opaque
 data:
-  jwt-secret: "TUVOVWNGTlBZV1YwVXpWa1lVdDBTa1pHU0RCWWRGQnVRek5sTkhabWRqTT0="
+  jwt-secret: "UzI1NVJUZEJTMGcwUkhCc1RsVkJRVWs0TW1WVVdVSjVaRkZyY1dWb1Ewbz0="
 ---
 # Source: airflow/templates/secrets/metadata-connection-secret.yaml
 ################################
@@ -2361,6 +2361,8 @@ metadata:
     release: airflow
     chart: "airflow-1.18.0"
     heritage: Helm
+  annotations:
+    argocd.argoproj.io/hook: Sync
 spec:
   ttlSecondsAfterFinished: 300
   template:
@@ -2878,7 +2880,7 @@ metadata:
     "helm.sh/hook-weight": "0"
 type: Opaque
 data:
-  fernet-key: "Y1RReWFGaHdjRko2YkhoVlkyNXlURU56VWxGT1JqaEpTMEZpV1ZaVVlrMD0="
+  fernet-key: "VG1KdmQyTkxNbEJ6U1ZrelUyVm1NMFZqU2xBd2QwSkxSblJuUjNGd2QzQT0="
 ---
 # Source: airflow/templates/secrets/redis-secrets.yaml
 # We will create these secrets (if necessary) _even if_ we aren't
@@ -2908,7 +2910,7 @@ metadata:
     "helm.sh/hook-weight": "0"
 type: Opaque
 data:
-  password: "STQ5cHN5NWxHTQ=="
+  password: "SXg1NFU2RUx2Vw=="
 ---
 # Source: airflow/templates/secrets/redis-secrets.yaml
 ##################################
@@ -2930,4 +2932,4 @@ metadata:
     "helm.sh/hook-weight": "0"
 type: Opaque
 data:
-  connection: "cmVkaXM6Ly86STQ5cHN5NWxHTUBhaXJmbG93LXJlZGlzOjYzNzkvMA=="
+  connection: "cmVkaXM6Ly86SXg1NFU2RUx2V0BhaXJmbG93LXJlZGlzOjYzNzkvMA=="
